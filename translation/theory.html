@@ -1,0 +1,479 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="" name="description">
+<meta content="" name="author">
+
+<meta name="experiment-short-name" content="truth-table-gates">
+<meta name="developer-institute" content="IITR">
+<meta name="learning-unit" content="VERIFICATION AND INTERPRETATION OF TRUTH TABLE FOR AND, OR, NOT, NAND, NOR,
+EX-OR, EX-NOR GATES.">
+<meta name="task-name" content="Theory">
+
+<!-- For iPhone -->
+<meta name="msapplication-TileColor" content="#4076e0">
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#4076e0">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#4076e0">
+<title>वर्चुअल लैब्स</title>
+<link rel="shortcut icon" href="./assets/images/favicon.ico">
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg==" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&amp;family=Raleway&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./assets/css/github-markdown.min.css">
+<link rel="stylesheet" href="./assets/css/vlabs-style.css">
+
+<script src="./assets/js/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+<style>
+h1 {
+font-size: 1.8rem;
+}
+h2 {
+font-size: 1.4rem;
+}
+h3 {
+font-size: 1.2rem;
+}
+
+h2, h3 {
+font-weight: 800;
+}
+</style>
+</head>
+<body class="p-0 container-fluid vlabs-page d-flex flex-column justify-content-between">
+
+<header class="vlabs-header sticky-top bg-white">
+<nav class="p-0 navbar navbar-light d-flex align-items-stretch">
+
+<button class="navbar-toggler px-4" type="button" onclick="toggle()">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="d-flex justify-content-center">
+<a href="https://vlab.co.in" class="navbar-brand">
+<img src="./assets/images/vlabs-color-small-moe.jpg" alt="vlabs logo" class="vlabs-logo">
+</a>
+</div>
+
+<div id="headerNavbar" class="d-none border-top flex-grow-1 d-lg-flex align-items-center">
+<ul class="navbar-nav ml-auto text-center d-flex flex-md-row">
+<li class="nav-item px-2 m-1">
+<a href="https://vlab.co.in">होम</a>
+</li>
+<li class="nav-item px-2 m-1">
+<a href="https://vlab.co.in/participating-institutes">भागीदार</a>
+</li>
+<li class="nav-item px-2 m-1">
+<a href="https://vlab.co.in/contact-us">संपर्क</a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="container-fluid flex-fill d-flex flex-column vlabs-page-main">
+<div class="row d-flex justify-content-between">
+<div class="flex-column">
+
+<div class="row py-4 px-4 breadcrumbs">
+<a href="http://www.vlab.co.in/broad-area-electronics-and-communications">
+इलेक्ट्रॉनिक्स और संचार इंजीनियरिंग
+</a>
+<span class="mx-2">
+<i aria-hidden="true" class="fa fa-angle-right"></i>
+</span>
+<a href="https://de-iitr.vlabs.ac.in">
+डिजिटल इलेक्ट्रॉनिक्स 1
+</a>
+<span class="mx-2">
+<i aria-hidden="true" class="fa fa-angle-right"></i>
+</span>
+<a href="https://de-iitr.vlabs.ac.in/List of experiments.html">
+प्रयोग
+</a>
+</div>
+
+</div>
+<div class="flex-column">
+<div id="plugin-bug-report"></div>
+<div id="plugin-rating"></div>
+</div>
+</div>
+<div class="row flex-grow-1 d-flex flex-nowrap flex-column flex-lg-row">
+<div class="modal fade popupmenu" id="popupMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalLabel">
+<a href="https://vlab.co.in" class="navbar-brand">
+<img src="./assets/images/vlabs-color-small-moe.jpg" alt="vlabs logo" class="vlabs-logo">
+</a>
+</h5>
+<button type="button" class="btn-close align-self-center" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body nav-menu">
+<div>
+<div class="d-flex nav-menu-body">
+<a href="index.html" class="p-2 ">
+उद्देश्य
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="theory.html" class="p-2  current-item ">
+सिद्धांत
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="pretest.html" class="p-2 ">
+प्रीटेस्ट
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="procedure.html" class="p-2 ">
+कार्यप्रणाली
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="simulation.html" class="p-2 ">
+सिमुलेशन
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="posttest.html" class="p-2 ">
+पोस्टटेस्ट
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="references.html" class="p-2 ">
+सन्दर्भ
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="feedback.html" class="p-2 ">
+प्रतिपुष्टि
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="nav flex-column sidebar nav-menu flex-shrink-0 px-lg-4 align-items-center align-items-lg-start hidden d-none d-lg-flex" id="menu">
+<div>
+<div class="d-flex nav-menu-body">
+<a href="index.html" class="p-2 ">
+उद्देश्य
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="theory.html" class="p-2  current-item ">
+सिद्धांत
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="pretest.html" class="p-2 ">
+प्रीटेस्ट
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="procedure.html" class="p-2 ">
+कार्यप्रणाली
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="simulation.html" class="p-2 ">
+सिमुलेशन
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="posttest.html" class="p-2 ">
+पोस्टटेस्ट
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="references.html" class="p-2 ">
+सन्दर्भ
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+<div>
+<div class="d-flex nav-menu-body">
+<a href="feedback.html" class="p-2 ">
+प्रतिपुष्टि
+</a>
+
+</div>
+<div id="t-" class="collapse">
+<div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+</div>
+</div>
+</div>
+</div>          <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body">
+<div class="text-center fix-spacing">
+<h2 id="verification-and-interpretation-of-truth-table-for-and-or-not-nand-nor-ex-or-ex-nor-gates">AND, OR, NOT, NAND, NOR, Ex-OR, Ex-NOR गेट्स के लिए ट्रुथ टेबल का सत्यापन और व्याख्या।</h2>
+
+</div>
+<h3 id="introduction">परिचय</h3>
+<br>
+लॉजिक गेट्स किसी भी डिजिटल सिस्टम के बुनियादी बिल्डिंग ब्लॉक हैं।  लॉजिक गेट्स इलेक्ट्रॉनिक सर्किट्स हैं जिनमें एक या एक से अधिक इनपुट और केवल एक आउटपुट होता है।  इनपुट और आउटपुट के बीच संबंध एक निश्चित लॉजिक पर आधारित है।  इसी के आधार पर लॉजिक गेट्स के नाम इस प्रकार होतें हैं<br>
+
+<ol>
+<li>AND गेट<br></li>
+<li>OR गेट<br></li>
+<li>NOT गेट<br></li>
+<li>NAND गेट<br></li>
+<li>NOR गेट<br></li>
+<li>EX-OR गेट<br></li>
+<li>EX-NOR गेट<br></li>
+</ol>
+<h3 id="1-and-gate">1) AND गेट</h3>
+<br>
+AND गेट एक इलेक्ट्रॉनिक सर्किट है जो एक हाई आउटपुट (1) देता है केवल अगर इसके सभी इनपुट्स हाई हैं।  एक डॉट (.) AND ऑपरेशन दिखाने के लिए इस्तेमाल किया जाता है यानी A.B. या AB के रूप में लिखा जा सकता है<br>
+
+<center><b>Y= A.B</b><br>
+<img src="images/and.png" width="325" height="150"> <br> <b>चित्र-1: AND गेट का लॉजिक सिंबॉल</b> <br>
+<img src="images/AA.png" width="300" height="200"> <br><b>चित्र-2: AND गेट की ट्रुथ टेबल</b><p></p> <br></center>
+RTL (रेसिस्टर-ट्रांज़िस्टर-लॉजिक) स्विचेस का उपयोग करके एक सरल 2-इनपुट लॉजिक AND गेट का निर्माण किया जा सकता है, जिसमें इनपुट्स सीधे ट्रांज़िस्टर बेसेस से जुड़े होते हैं जैसा की नीचे दिखाया गया है। Q में आउटपुट के लिए  दोनों ट्रांज़िस्टर्स सैच्युरेटेड "ऑन" होने चाहिए।<p></p><br>
+<center><img src="images/and1.gif" width="325" height="250"> <br>
+<b>चित्र-3: आरटीएल लॉजिक के माध्यम से AND गेट</b><p></p> </center>
+
+
+<br><br>
+
+
+<h3 id="2-or-gate">2) OR गेट</h3>
+<p>OR गेट एक इलेक्ट्रॉनिक सर्किट है जो एक हाई आउटपुट (1) देता है यदि इसके एक या अधिक इनपुट्स हाई हैं। OR ऑपरेशन दिखाने के लिए एक प्लस (+) का उपयोग किया जाता है।<br><br></p>
+<center><b>Y= A+B</b><p></p><br>
+<img src="images/or.png" width="325" height="150"><br><b>चित्र-4: OR गेट का लॉजिक सिंबॉल</b> <br>
+<img src="images/truth_or.png" width="300" height="200"> <br> <b>चित्र-5: OR गेट की ट्रुथ टेबल</b><br></center>
+
+<p>OR गेट को डीआरएल (डायोड-रेजिस्टेंस-लॉजिक) या टीटीएल (ट्रांजिस्टर-ट्रांजिस्टर-लॉजिक) द्वारा प्राप्त किया जा सकता है।  वर्तमान में, हम सीखेंगे कि डीआरएल (डायोड-रेसिस्टेंस-लॉजिक) का उपयोग करके OR गेट को कैसे लागू किया जाए। OR गेट प्राप्त करने के लिए, हम OR गेट के हर इनपुट पर एक डायोड का उपयोग करेंगे।  डायोड का एनोड भाग इनपुट से जुड़ा होता है जबकि कैथोड भाग एक साथ जुड़ा होता है और एक कैथोड से जुड़ा रेसिस्टर ग्राउंडेड होता है।  इस मामले में, हमने दो इनपुट्स लिए हैं जो नीचे सर्किट में देखे जा सकते हैं।<br></p>
+<p>जब दोनों इनपुट्स लॉजिक 0 या लो स्थिति में होते हैं तो डायोड्स डी 1 और डी 2 रिवर्स बायस्ड हो जाते हैं।  चूंकि डायोड का एनोड टर्मिनल कैथोड टर्मिनल की तुलना में लो वोल्टेज स्तर पर है, इसलिए डायोड ओपन सर्किट के रूप में कार्य करेगा, इसलिए रेसिस्टर में कोई वोल्टेज नहीं है और इसलिए आउटपुट वोल्टेज जमीन के समान है।  जब दोनों में से कोई भी डायोड लॉजिक 1 या हाई स्टेट में होता है तो उस इनपुट के अनुरूप डायोड फॉरवर्ड बायस होता है।  चूंकि इस समय एनोड कैथोड की तुलना में हाई वोल्टेज पर है इसलिए करंट  फॉरवर्ड बायस्ड डायोड के माध्यम से प्रवाहित होगा और यह करंट फिर रेसिस्टर पर दिखाई देता है जिससे आउटपुट टर्मिनल पर भी हाई वोल्टेज होता है।  इसलिए आउटपुट में हमें हाई या तर्क 1 या +5V  मिलता है।  इसलिए, यदि कोई या दोनों इनपुट हाई हैं, तो आउटपुट उच्च या "1" होगा।<br></p>
+<center><img src="images/dior.gif" width="150" height="250"><br> <b>चित्र-6: डीआरएल लॉजिक के माध्यम से OR गेट</b><p></p></center><br>
+
+
+### 3) NOT गेट
+<br>
+NOT गेट एक इलेक्ट्रॉनिक सर्किट है जो अपने आउटपुट में इनपुट का इन्वर्टेड वर्शन तैयार करता है।  इसे इन्वर्टर के नाम से भी जाना जाता है।  यदि इनपुट परिवर्ती संख्या A है, तो इन्वर्टेड आउटपुट को NOT A जाना जाता है। इसे A' या A के शीर्ष पर एक बार के साथ दिखाया जाता है, जैसा कि आउटपुट में दिखाया गया है।
+<br><br>
+<center><b>Y= A'</b><br>
+
+<p><img src="images/not.png" width="325" height="150"><br> <b>चित्र-7: NOT गेट का लॉजिक सिंबॉल</b><br>
+<img src="images/truth_not.png" width="300" height="200"> <br><b>चित्र-8: NOT गेट की ट्रुथ टेबल</b><br><br><br></p></center><p></p>
+<p>ट्रांजिस्टर के माध्यम से NOT गेट को प्राप्त किया जा सकता है।  इनपुट रेसिस्टर R2 के माध्यम से ट्रांजिस्टर बेस से जुड़ा होता है।  जब इनपुट पर कोई वोल्टेज मौजूद नहीं होता है, तो ट्रांजिस्टर बंद हो जाता है।  जब ट्रांजिस्टर बंद हो जाता है, तो कलेक्टर-एमिटर पाथ से कोई करंट प्रवाह नहीं होता है।  इस प्रकार, सप्लाई वोल्टेज (VCC) से करंट रेसिस्टर R1 से आउटपुट तक प्रवाहित होता है।  इस तरह, सर्किट का आउटपुट हाई होता है जब इसका इनपुट लो होता है।</p>
+<p>जब वोल्टेज इनपुट पर मौजूद होता है, तो ट्रांजिस्टर चालू हो जाता है, जिससे करंट सीधे कलेक्टर-एमिटर सर्किट के माध्यम से ग्राउंड तक प्रवाहित होता है।  यह ग्राउंड पथ एक शॉर्टकट बनाता है जो आउटपुट को बाईपास करता है, जिससे आउटपुट लो हो जाता है।</p>
+<p>इस तरह, इनपुट लो होने पर आउटपुट हाई होता और इनपुट हाई होने पर लो।</p><br><p></p>
+<center><img src="images/nott.jpg" width="350" height="250"> <br>
+<b>चित्र-9:ट्रांजिस्टर के माध्यम से NOT गेट</b><p></p> <br></center>
+
+
+
+<h3 id="4-nand-gate">4) NAND गेट</h3>
+<p>यह एक NOT-AND गेट है जो एक AND गेट के बाद एक NOT गेट के बराबर है।  यदि कोई भी इनपुट लो हैं तो सभी NAND गेट्स के आउटपुट हाई होते हैं। AND गेट के साथ आउटपुट पर एक छोटा सर्कल उसका सिंबॉल है।  छोटा सर्कल इन्वेर्शन का प्रतिनिधित्व करता है।<br><br></p>
+<center><b>Y= <span style="text-decoration: overline;">AB</span></b><p></p></center><br>
+<center><img src="images/nand.png" width="325" height="150" align="center"><br><b>चित्र-10: AND गेट का लॉजिक सिंबॉल</b><br>
+<img src="images/truth_nand.png" width="300" height="200"><br><b>चित्र-11: NAND गेट की ट्रुथ टेबल</b> <br></center>
+
+<p>RTL (रेसिस्टर-ट्रांज़िस्टर-लॉजिक) स्विचेस का उपयोग करके एक सरल 2-इनपुट लॉजिक NAND गेट का निर्माण किया जा सकता है, जिसमें इनपुट्स सीधे ट्रांज़िस्टर बेसेस से जुड़े होते हैं जैसा की नीचे दिखाया गया है। Q में आउटपुट के लिए दोनों ट्रांज़िस्टर्स "cut-off" या "off" होने चाहिए।</p><br><p></p>
+<center><img src="images/nandr.gif" width="350" height="250"> <br><b>चित्र-12: आरटीएल लॉजिक के माध्यम से NAND गेट।</b><p></p> <br></center>
+
+
+<h3 id="5-nor-gate">5) NOR गेट</h3>
+<br>
+यह एक NOT-OR गेट है जो एक OR गेट के बाद एक NOT गेट के बराबर है।  यदि कोई भी इनपुट्स हाई हैं तो सभी NOR गेट्स के आउटपुट्स लो हैं।
+आउटपुट पर एक छोटे सर्कल के साथ एक OR गेट उसका सिंबॉल है।  छोटा सर्कल इन्वर्शन का प्रतिनिधित्व करता है।
+<br><br>
+<center><b>Y= <span style="text-decoration: overline;">A+B</span></b><p></p><br>
+<img src="images/nor.png" width="325" height="150"><br><b>चित्र-13: NOR गेट का तर्क प्रतीक</b><br>
+<img src="images/truth_nor.png" width="300" height="200"> <br><b>चित्र-14: NOR गेट की ट्रुथ टेबल</b><br></center>
+
+<p>RTL (रेसिस्टर-ट्रांज़िस्टर-लॉजिक) स्विचेस का उपयोग करके एक सरल 2-इनपुट लॉजिक NOR गेट का निर्माण किया जा सकता है, जिसमें इनपुट्स सीधे ट्रांज़िस्टर बेसेस से जुड़े होते हैं जैसा की नीचे दिखाया गया है। Q में आउटपुट के लिए दोनों ट्रांज़िस्टर्स "cut-off" या "off" होने चाहिए।<br></p>
+<center><img src="images/norr.gif" width="320" height="250"> <br>
+<b>चित्र-15: आरटीएल लॉजिक के माध्यम से NOR गेट।</b></center>
+
+<br>
+
+
+<h3 id="6-ex-or-gate">6) EX-OR गेट</h3>
+<br>
+'Exclusive-OR गेट एक सर्किट है जो हाई आउटपुट देगा, अगर इसके दोनों में से एक इनपुट हाई है मगर दोनों इनपुट्स हाई नहीं हैं। EX-OR ऑपरेशन को दिखाने के लिए एक घिरे हुए प्लस साइन (⊕) का उपयोग किया जाता है।
+<br><br>
+<center><b>Y= A⊕B</b><br>
+
+<p><img src="images/xor.png" width="325" height="150"> <br><b>चित्र-16: EX-OR गेट का लॉजिक सिंबॉल</b><br>
+<img src="images/truth_xor.png" width="300" height="200"> <br><b>चित्र-17: EX-OR गेट की ट्रुथ टेबल</b><br></p></center><p></p>
+<p>EX-OR गेट और, NAND और OR गेट्स से बनाया गया है। आउटपुट हाई केवल तब होता है जब दोनों इनपुट्स अलग होते हैं।</p><br><p></p>
+<center><img src="images/xorr.png" width="420" height="350"><br> <b>चित्र-18: आरटीएल लॉजिक के माध्यम से EX-OR गेट।</b><p></p> <br></center>
+
+
+<h3 id="7-ex-nor-gate">7) EX-NOR गेट</h3>
+<br>
+Exclusive-NOR गेट सर्किट EX-OR गेट के विपरीत करता है।  यह लो आउटपुट देगा अगर इसके दोनों में से एक इनपुट हाई है मगर दोनों इनपुट्स हाई नहीं हैं। आउटपुट पर एक छोटे सर्कल के साथ एक EX-OR गेट उसका सिंबॉल है।  छोटा सर्कल इन्वर्शन का प्रतिनिधित्व करता है।<br><br>
+<center><p align="center" style="font-size:120%; margin-top:2%"><b>Y= <span style="text-decoration: overline;">A⊕B</span></b></p><br><br>
+<br>
+<img src="images/xnor.png" width="325" height="150"><br> <b>चित्र-19: EX-NOR गेट का लॉजिक सिंबॉल</b><br>
+<img src="images/truth_xnor.png" width="300" height="200"><br> <b>चित्र-20: EX-NOR गेट की ट्रुथ टेबल</b><br></center>
+
+
+<p>EX-NOR गेट AND, NOT और OR गेट्स से बनाया जाता है। आउटपुट केवल तभी हाई होता है जब दोनों इनपुट्स समान हों।</p>
+<center><br><img src="images/xnorr.jpg" width="420" height="350"> <br>
+
+<b>चित्र-21: आरटीएल लॉजिक के माध्यम से EX-NOR गेट।</b><p></p> </center>
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+<footer class="text-light pt-2 vlabs-footer d-flex flex-column">
+<div class="row px-5 mx-0">
+<div class="col d-flex flex-column">
+<span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">कम्युनिटी लिंक्स</span>
+<a href="https://www.sakshat.ac.in/" class="text-light">साक्षात पोर्टल</a>
+<a href="http://outreach.vlabs.ac.in/" class="text-light">आउटरीच पोर्टल</a>
+<a href="https://vlab.co.in/faq" class="text-light">FAQ: वर्चुअल लैब्स</a>
+</div>
+<div class="col d-flex flex-column">
+<span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">हमसे संपर्क करें</span>
+<span> फोन: सामान्य जानकारी: 011-26582050 </span>
+<span> ईमेल: support@vlabs.ac.in </span>
+</div>
+<div class="col d-flex flex-column">
+<span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">हमारा अनुसरण करें</span>
+<div class="social-links">
+<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #55acee;" href="https://twitter.com/TheVirtualLabs">
+<i class="fa fa-twitter"></i>
+</a>
+<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #3b5998;" href="https://www.facebook.com/Virtual-Labs-IIT-Delhi-301510159983871/">
+<i class="fa fa-facebook"></i>
+</a>
+<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #e52d27;" href="https://www.youtube.com/watch?v=asxRaOgk6a0">
+<i class="fa fa-youtube"></i>
+</a>
+<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #2867B2;" href="https://in.linkedin.com/in/virtual-labs-008ba9136">
+<i class="fa fa-linkedin"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="m-0 py-2 text-center" style="font-family: &quot;Open Sans&quot;, sans-serif; background: #212121;">
+<a class="text-primary font-weight-bold" href="https://www.gnu.org/licenses/agpl-3.0.en.html"> AGPL 3.0 </a>
+&nbsp;&amp;&nbsp;
+<a class="text-primary font-weight-bold" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"> क्रिएटिव कॉमन्स (CC BY-NC-SA 4.0) </a>
+</div>
+</footer>
+
+<script src="./assets/js/toggleSidebar.js"></script>
+
+
+
+</body></html>
